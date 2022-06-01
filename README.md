@@ -14,18 +14,18 @@ This sample application demonstrates the following technologies.
 This guide will show you how to deploy the  ` Node.js Weight Tracker`,
 using two servers, one dedicated to the database and another dedicated to the application.
 
-Both servers run Ubuntu Server operating systems.
+Both servers run `Ubuntu Server` operating systems.
 
 # Requirements
-- Two servers running Ubuntu Server operating system.
-- [Node.js](https://nodejs.org/) 14.x.x
+- Two servers running `Ubuntu Server` operating system.
+- [Node.js](https://nodejs.org/) 14.x
 - [PostgreSQL](https://www.postgresql.org/)
 - [Free Okta developer account](https://developer.okta.com/) for account registration, login
 
 ## Install and Configuration
 
 1. Clone or download on both servers.
-2. Install `Node.js` version 14.x.x and `npm` on both servers.
+2. Install `Node.js` version 14.x and `npm` on both servers.
 3. Run `npm install` to install dependencies on both servers.
 4. Set up PostgreSQL - `sudo apt-get install postgresql postgresql-contrib` at the `DBServer`.
 5. Open your `postgresql` port to allow traffic on port 5432.
