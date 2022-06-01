@@ -54,6 +54,7 @@ Both servers run `Ubuntu Server` operating systems.
   PGPORT=5432
 ~~~
 - DBServer .env -
+
 ~~~yaml
   # Host configuration
   NODE_ENV=development
@@ -70,15 +71,26 @@ Both servers run `Ubuntu Server` operating systems.
 
 
 8. Initialize the PostgreSQL database by running `npm run initdb` at the `DBServer`
-9. > <img src="./images/run_initdb.png" width="500"/>
-10. Run `npm run dev` to start Node.js at the `WebServer`
+> <img src="./images/run_initdb.png" width="500"/>
+
+9. install PM2 and add the application to make it run automatically after a reboot.
+
+**All this step at the `DBServer`**
+- `sudo npm install pm2 -g`
+
+> <img src="./images/install_pm2.png" width="900"/>
+
+- At the project directory run : `pm2 start src/index.js`
+> <img src="./images/start_pm2_at_project.png" width="800"/>
+
+- Add the auto start to the start-up run :
+
+>sudo env PATH=$PATH:/usr/local/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+
+- Save to start-up, run : `pm2 save`
+    
 <img src="./images/running_app.png" width="800"/>
 
 **Note:**
 
 `DBServer` will automatically run after reboot.
-
-`WebServer` will automatically run after reboot if we add him to `crontab`:
-
-- Run `crontab -e`
-- Insert the follow line : `@reboot cd YOUR_PROJECT_PATH && sudo npm run dev`
