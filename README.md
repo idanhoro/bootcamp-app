@@ -27,10 +27,14 @@ Both servers run Ubuntu Server operating systems.
 1. Clone or download on both servers.
 2. Install `Node.js` version 14.x.x and `npm` on both servers.
 3. Run `npm install` to install dependencies on both servers.
-4. Set up PostgreSQL - `sudo apt-get install postgresql postgresql-contrib` at the `DBServer`
+4. Set up PostgreSQL - `sudo apt-get install postgresql postgresql-contrib` at the `DBServer`.
 5. Open your `postgresql` port to allow traffic on port 5432.
-6. Create a [free Okta developer account](https://developer.okta.com/) and add a web application for this app
-7. Create `.env` and change the `OKTA_*` & `Host` & `postgresql` values to your application
+ > <img src="./images/open_port.png" width="700"/>
+
+6. Initialize the PostgreSQL database by running `npm run initdb` at the `DBServer`
+ > <img src="./images/run_initdb.png" width="500"/>
+7. Create a [free Okta developer account](https://developer.okta.com/) and add a web application for this app.
+8. Create `.env` and change the `OKTA_*` & `Host` & `postgresql` configuration values to your application.
 - WebServer .env -
 ~~~yaml
   # Host configuration
@@ -70,6 +74,7 @@ Both servers run Ubuntu Server operating systems.
 
 8. Initialize the PostgreSQL database by running `npm run initdb` at the `DBServer`
 9. Run `npm run dev` to start Node.js at the `WebServer`
+<img src="./images/running_app.png" width="800"/>
 
 **Note:**
 
