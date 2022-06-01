@@ -25,7 +25,7 @@ Both servers run Ubuntu Server operating systems.
 ## Install and Configuration
 
 1. Clone or download on both servers.
-2. Install Node.js` version 14.x.x and `npm` on both servers.
+2. Install `Node.js` version 14.x.x and `npm` on both servers.
 3. Run `npm install` to install dependencies on both servers.
 4. Set up PostgreSQL - `sudo apt-get install postgresql postgresql-contrib` at the `DBServer`
 5. Open your `postgresql` port to allow traffic on port 5432.
@@ -75,7 +75,7 @@ Both servers run Ubuntu Server operating systems.
 
 `DBServer` will automatically run after reboot.
 
-`WebServer` will automatically run after we add him to `crontab`:
+`WebServer` will automatically run after reboot if we add him to `crontab`:
 
 - Run `crontab -e`
 - Insert the follow line : `@reboot cd YOUR_PROJECT_PATH && sudo npm run dev`
